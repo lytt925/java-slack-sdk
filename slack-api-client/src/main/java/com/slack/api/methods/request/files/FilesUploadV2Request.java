@@ -1,6 +1,7 @@
 package com.slack.api.methods.request.files;
 
 import com.slack.api.methods.SlackApiRequest;
+import com.slack.api.model.block.LayoutBlock;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -79,6 +80,16 @@ public class FilesUploadV2Request implements SlackApiRequest {
     @Deprecated
     @Builder.Default
     private boolean requestFileInfo = true;
+
+    /**
+     * A JSON-based array of structured blocks, presented as a URL-encoded string.
+     */
+    private List<LayoutBlock> blocks;
+
+    /**
+     * A JSON-based array of structured blocks as a String, presented as a URL-encoded string.
+     */
+    private String blocksAsString;
 
     @Data
     @Builder

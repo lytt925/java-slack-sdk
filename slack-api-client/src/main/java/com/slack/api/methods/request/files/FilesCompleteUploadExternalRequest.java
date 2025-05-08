@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
+import com.slack.api.model.block.LayoutBlock;
 
 /**
  * https://api.slack.com/methods/files.completeUploadExternal
@@ -45,6 +46,16 @@ public class FilesCompleteUploadExternalRequest implements SlackApiRequest {
      * Never use a reply's ts value; use its parent instead.
      */
     private String threadTs;
+
+    /**
+     * A JSON-based array of structured blocks, presented as a URL-encoded string.
+     */
+    private List<LayoutBlock> blocks;
+
+    /**
+     * A JSON-based array of structured blocks as a String, presented as a URL-encoded string.
+     */
+    private String blocksAsString;
 
     @Data
     @Builder
